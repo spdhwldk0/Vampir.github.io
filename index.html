@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>내 홈페이지</title>
 
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -31,7 +30,7 @@ body {
 
 button {
     width: 100%;
-    padding: 15px;
+    padding: 15px 18px;
     margin: 10px 0;
     border: none;
     border-radius: 12px;
@@ -42,8 +41,13 @@ button {
     transition: 0.2s;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    gap: 10px;
+}
+
+button span {
+    flex: 1;
+    text-align: left;
 }
 
 button:hover {
@@ -67,7 +71,6 @@ button:hover {
 
 /* 아이콘 색상 */
 .fa-youtube { color: #ff0000; }
-.fa-comment { color: #f7e600; }
 .fa-discord { color: #5865F2; }
 .fa-file-excel { color: #16a34a; }
 
@@ -75,7 +78,13 @@ i {
     font-size: 20px;
 }
 
-/* 모바일 전용 */
+/* 카카오 이미지 아이콘 */
+.kakao-icon {
+    width: 22px;
+    height: 22px;
+}
+
+/* 모바일 */
 @media (max-width: 768px) {
     body {
         padding: 20px;
@@ -103,55 +112,55 @@ i {
 <button onclick="toggle('community')">커뮤니티</button>
 <div class="sub-buttons" id="community">
     <button onclick="goLink('https://discord.com/channels/1409051451535130696/1447358439008243865')">
-        <i class="fa-brands fa-discord"></i> 디스코드
+        <i class="fa-brands fa-discord"></i><span>디스코드</span>
     </button>
     <button onclick="goLink('https://open.kakao.com/o/gnYNEtZh')">
-        <i class="fa-solid fa-comment"></i> 공지방
+        <img src="kakao.png" class="kakao-icon"><span>공지방</span>
     </button>
     <button onclick="goLink('https://open.kakao.com/o/gUIwDdMh')">
-        <i class="fa-solid fa-comment"></i> 소통방
+        <img src="kakao.png" class="kakao-icon"><span>소통방</span>
     </button>
 </div>
 
 <button onclick="toggle('sheet')">시트</button>
 <div class="sub-buttons" id="sheet">
     <button onclick="goLink('https://docs.google.com/spreadsheets/d/1hYLdChhjJa22knwb22sqWf3UeLFN4SgGTJUZ6HhBJKQ/edit?gid=1864381143#gid=1864381143')">
-        <i class="fa-solid fa-file-excel"></i> 종합 시트
+        <i class="fa-solid fa-file-excel"></i><span>종합 시트</span>
     </button>
     <button onclick="goLink('https://docs.google.com/forms/d/e/1FAIpQLSduZjQQckag4KOYvkpc14Euyt-qc46TGIGcp6nau7nyAOc9YQ/viewform')">
-        <i class="fa-solid fa-file-excel"></i> 전투력 갱신
+        <i class="fa-solid fa-file-excel"></i><span>전투력 갱신</span>
     </button>
 </div>
 
 <button onclick="toggle('youtube')">유튜브</button>
 <div class="sub-buttons" id="youtube">
     <button onclick="goLink('https://www.youtube.com/@%EC%9C%A0%ED%8A%9C%EB%B8%8C%EB%B9%85%EB%B3%B4%EC%8A%A4')">
-        <i class="fa-brands fa-youtube"></i> 빅보스
+        <i class="fa-brands fa-youtube"></i><span>빅보스</span>
     </button>
     <button onclick="goLink('https://www.youtube.com/@%EC%9E%AC%EB%B2%94%EA%B5%B0%EC%A3%BC')">
-        <i class="fa-brands fa-youtube"></i> 재범군주
+        <i class="fa-brands fa-youtube"></i><span>재범군주</span>
     </button>
     <button onclick="goLink('https://www.youtube.com/@%EC%95%84%EC%9D%B4%EC%97%A0%EC%86%94%EC%9D%B4')">
-        <i class="fa-brands fa-youtube"></i> 아이엠솔이
+        <i class="fa-brands fa-youtube"></i><span>아이엠솔이</span>
     </button>
     <button onclick="goLink('https://www.youtube.com/@%EC%9B%90%ED%81%90')">
-        <i class="fa-brands fa-youtube"></i> 원큐
+        <i class="fa-brands fa-youtube"></i><span>원큐</span>
     </button>
     <button onclick="goLink('https://www.youtube.com/@%EC%82%AC%EB%95%85%EC%9D%B4')">
-        <i class="fa-brands fa-youtube"></i> 사땅
+        <i class="fa-brands fa-youtube"></i><span>사땅</span>
     </button>
 </div>
 
 <button onclick="toggle('etc')">운영진</button>
 <div class="sub-buttons" id="etc">
     <button onclick="goLink('https://open.kakao.com/o/sCF92ZXh')">
-        <i class="fa-solid fa-comment"></i> 시트관리 : 갓더헬
+        <img src="kakao.png" class="kakao-icon"><span>시트관리 : 갓더헬</span>
     </button>
     <button onclick="goLink('https://open.kakao.com/o/sbOCEYci')">
-        <i class="fa-solid fa-comment"></i> 은행 출금 : 유연
+        <img src="kakao.png" class="kakao-icon"><span>은행 출금 : 유연</span>
     </button>
     <button onclick="goLink('https://open.kakao.com/me/ssjun')">
-        <i class="fa-solid fa-comment"></i> 아이템 창고 : 써준
+        <img src="kakao.png" class="kakao-icon"><span>아이템 창고 : 써준</span>
     </button>
 </div>
 
