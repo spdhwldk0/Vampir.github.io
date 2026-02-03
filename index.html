@@ -45,7 +45,7 @@ button:hover {
 
 .sub-buttons {
     display: none;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .sub-buttons button {
@@ -63,25 +63,46 @@ button:hover {
 
 <div class="container">
 
-    <button onclick="toggleCommunity()">커뮤니티</button>
-
-    <div class="sub-buttons" id="communityMenu">
+    <!-- 커뮤니티 -->
+    <button onclick="toggle('community')">커뮤니티</button>
+    <div class="sub-buttons" id="community">
         <button onclick="goLink('https://discord.com/channels/1409051451535130696/1447358439008243865')">디스코드</button>
         <button onclick="goLink('https://open.kakao.com/o/gnYNEtZh')">공지방</button>
         <button onclick="goLink('https://open.kakao.com/o/gUIwDdMh')">소통방</button>
     </div>
 
-    <button>버튼 2 (미정)</button>
-    <button>버튼 3 (미정)</button>
+    <!-- 시트 -->
+    <button onclick="toggle('sheet')">시트</button>
+    <div class="sub-buttons" id="sheet">
+        <button onclick="goLink('시트1')">시트 1</button>
+        <button onclick="goLink('시트2')">시트 2</button>
+        <button onclick="goLink('시트3')">시트 3</button>
+    </div>
+
+    <!-- 유튜브 -->
+    <button onclick="toggle('youtube')">유튜브</button>
+    <div class="sub-buttons" id="youtube">
+        <button onclick="goLink('https://www.youtube.com/@%EC%9C%A0%ED%8A%9C%EB%B8%8C%EB%B9%85%EB%B3%B4%EC%8A%A4')">빅보스</button>
+        <button onclick="goLink('https://www.youtube.com/@%EC%9E%AC%EB%B2%94%EA%B5%B0%EC%A3%BC')">재범군주</button>
+        <button onclick="goLink('https://www.youtube.com/@%EC%95%84%EC%9D%B4%EC%97%A0%EC%86%94%EC%9D%B4')">아이엠솔이</button>
+        <button onclick="goLink('https://www.youtube.com/@%EC%9B%90%ED%81%90')">원큐</button>
+    </div>
+
+    <!-- 미정 -->
     <button>버튼 4 (미정)</button>
 
 </div>
 
 <script>
-function toggleCommunity() {
-    const menu = document.getElementById("communityMenu");
+function toggle(id) {
+    const menus = document.querySelectorAll(".sub-buttons");
 
-    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    menus.forEach(menu => {
+        if (menu.id !== id) menu.style.display = "none";
+    });
+
+    const current = document.getElementById(id);
+    current.style.display = current.style.display === "block" ? "none" : "block";
 }
 
 function goLink(url) {
