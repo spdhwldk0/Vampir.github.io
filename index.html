@@ -8,8 +8,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: white;
+    background: #f5f7fb;
+    color: #1e293b;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +18,11 @@ body {
 
 .container {
     text-align: center;
-    width: 300px;
+    width: 320px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 button {
@@ -26,15 +30,17 @@ button {
     padding: 15px;
     margin: 10px 0;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     font-size: 16px;
     cursor: pointer;
-    background: #2563eb;
+    background: #3b82f6;
     color: white;
+    transition: 0.2s;
 }
 
 button:hover {
-    background: #1d4ed8;
+    background: #2563eb;
+    transform: scale(1.02);
 }
 
 .sub-buttons {
@@ -43,11 +49,12 @@ button:hover {
 }
 
 .sub-buttons button {
-    background: #334155;
+    background: #e5edff;
+    color: #1e293b;
 }
 
 .sub-buttons button:hover {
-    background: #475569;
+    background: #c7d2fe;
 }
 </style>
 </head>
@@ -56,7 +63,6 @@ button:hover {
 
 <div class="container">
 
-    <!-- 커뮤니티 -->
     <button onclick="toggleCommunity()">커뮤니티</button>
 
     <div class="sub-buttons" id="communityMenu">
@@ -65,7 +71,6 @@ button:hover {
         <button onclick="goLink('https://open.kakao.com/o/gUIwDdMh')">소통방</button>
     </div>
 
-    <!-- 나머지 3개 버튼 (미정) -->
     <button>버튼 2 (미정)</button>
     <button>버튼 3 (미정)</button>
     <button>버튼 4 (미정)</button>
@@ -76,11 +81,7 @@ button:hover {
 function toggleCommunity() {
     const menu = document.getElementById("communityMenu");
 
-    if (menu.style.display === "none" || menu.style.display === "") {
-        menu.style.display = "block";
-    } else {
-        menu.style.display = "none";
-    }
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
 
 function goLink(url) {
