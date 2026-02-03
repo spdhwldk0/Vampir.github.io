@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>내 홈페이지</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 body {
     margin: 0;
@@ -37,6 +39,10 @@ button {
     background: #3b82f6;
     color: white;
     transition: 0.2s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
 }
 
 button:hover {
@@ -57,7 +63,8 @@ button:hover {
 .sub-buttons button:hover {
     background: #c7d2fe;
 }
-    @media (max-width: 768px) {
+
+@media (max-width: 768px) {
     body {
         padding: 20px;
         height: auto;
@@ -81,38 +88,60 @@ button:hover {
 
 <div class="container">
 
-    <!-- 커뮤니티 -->
-    <button onclick="toggle('community')">커뮤니티</button>
-    <div class="sub-buttons" id="community">
-        <button onclick="goLink('https://discord.com/channels/1409051451535130696/1447358439008243865')">디스코드</button>
-        <button onclick="goLink('https://open.kakao.com/o/gnYNEtZh')">공지방</button>
-        <button onclick="goLink('https://open.kakao.com/o/gUIwDdMh')">소통방</button>
-    </div>
+<button onclick="toggle('community')">커뮤니티</button>
+<div class="sub-buttons" id="community">
+    <button onclick="goLink('https://discord.com/channels/1409051451535130696/1447358439008243865')">
+        <i class="fa-brands fa-discord"></i> 디스코드
+    </button>
+    <button onclick="goLink('https://open.kakao.com/o/gnYNEtZh')">
+        <i class="fa-solid fa-comment"></i> 공지방
+    </button>
+    <button onclick="goLink('https://open.kakao.com/o/gUIwDdMh')">
+        <i class="fa-solid fa-comment"></i> 소통방
+    </button>
+</div>
 
-    <!-- 시트 -->
-    <button onclick="toggle('sheet')">시트</button>
-    <div class="sub-buttons" id="sheet">
-        <button onclick="goLink('https://docs.google.com/spreadsheets/d/1hYLdChhjJa22knwb22sqWf3UeLFN4SgGTJUZ6HhBJKQ/edit?gid=1864381143#gid=1864381143')">종합 시트</button>
-        <button onclick="goLink('https://docs.google.com/forms/d/e/1FAIpQLSduZjQQckag4KOYvkpc14Euyt-qc46TGIGcp6nau7nyAOc9YQ/viewform')">전투력 갱신</button>
-    </div>
+<button onclick="toggle('sheet')">시트</button>
+<div class="sub-buttons" id="sheet">
+    <button onclick="goLink('https://docs.google.com/spreadsheets/d/1hYLdChhjJa22knwb22sqWf3UeLFN4SgGTJUZ6HhBJKQ/edit?gid=1864381143#gid=1864381143')">
+        <i class="fa-solid fa-file-excel"></i> 종합 시트
+    </button>
+    <button onclick="goLink('https://docs.google.com/forms/d/e/1FAIpQLSduZjQQckag4KOYvkpc14Euyt-qc46TGIGcp6nau7nyAOc9YQ/viewform')">
+        <i class="fa-solid fa-file-excel"></i> 전투력 갱신
+    </button>
+</div>
 
-    <!-- 유튜브 -->
-    <button onclick="toggle('youtube')">유튜브</button>
-    <div class="sub-buttons" id="youtube">
-        <button onclick="goLink('https://www.youtube.com/@%EC%9C%A0%ED%8A%9C%EB%B8%8C%EB%B9%85%EB%B3%B4%EC%8A%A4')">빅보스</button>
-        <button onclick="goLink('https://www.youtube.com/@%EC%9E%AC%EB%B2%94%EA%B5%B0%EC%A3%BC')">재범군주</button>
-        <button onclick="goLink('https://www.youtube.com/@%EC%95%84%EC%9D%B4%EC%97%A0%EC%86%94%EC%9D%B4')">아이엠솔이</button>
-        <button onclick="goLink('https://www.youtube.com/@%EC%9B%90%ED%81%90')">원큐</button>
-        <button onclick="goLink('https://www.youtube.com/@%EC%82%AC%EB%95%85%EC%9D%B4')">사땅</button>
-    </div>
+<button onclick="toggle('youtube')">유튜브</button>
+<div class="sub-buttons" id="youtube">
+    <button onclick="goLink('https://www.youtube.com/@%EC%9C%A0%ED%8A%9C%EB%B8%8C%EB%B9%85%EB%B3%B4%EC%8A%A4')">
+        <i class="fa-brands fa-youtube"></i> 빅보스
+    </button>
+    <button onclick="goLink('https://www.youtube.com/@%EC%9E%AC%EB%B2%94%EA%B5%B0%EC%A3%BC')">
+        <i class="fa-brands fa-youtube"></i> 재범군주
+    </button>
+    <button onclick="goLink('https://www.youtube.com/@%EC%95%84%EC%9D%B4%EC%97%A0%EC%86%94%EC%9D%B4')">
+        <i class="fa-brands fa-youtube"></i> 아이엠솔이
+    </button>
+    <button onclick="goLink('https://www.youtube.com/@%EC%9B%90%ED%81%90')">
+        <i class="fa-brands fa-youtube"></i> 원큐
+    </button>
+    <button onclick="goLink('https://www.youtube.com/@%EC%82%AC%EB%95%85%EC%9D%B4')">
+        <i class="fa-brands fa-youtube"></i> 사땅
+    </button>
+</div>
 
-    <!-- 운영진 -->
-    <button onclick="toggle('etc')">운영진</button>
-    <div class="sub-buttons" id="etc">
-        <button onclick="goLink('https://open.kakao.com/o/sCF92ZXh')">시트관리 : 갓더헬</button>
-        <button onclick="goLink('https://open.kakao.com/o/sbOCEYci')">은행 출금 : 유연</button>
-        <button onclick="goLink('https://open.kakao.com/me/ssjun')">아이템 창고 : 써준</button>
-    </div>
+<button onclick="toggle('etc')">운영진</button>
+<div class="sub-buttons" id="etc">
+    <button onclick="goLink('https://open.kakao.com/o/sCF92ZXh')">
+        <i class="fa-solid fa-comment"></i> 시트관리 : 갓더헬
+    </button>
+    <button onclick="goLink('https://open.kakao.com/o/sbOCEYci')">
+        <i class="fa-solid fa-comment"></i> 은행 출금 : 유연
+    </button>
+    <button onclick="goLink('https://open.kakao.com/me/ssjun')">
+        <i class="fa-solid fa-comment"></i> 아이템 창고 : 써준
+    </button>
+</div>
 
 </div>
 
