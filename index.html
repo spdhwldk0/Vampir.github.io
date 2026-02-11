@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>내 홈페이지</title>
 
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -72,7 +71,7 @@ i {
     font-size: 20px;
 }
 
-/* 아이콘만 왼쪽 고정 */
+/* 왼쪽 아이콘 고정 */
 button i,
 button img {
     position: absolute;
@@ -85,6 +84,43 @@ button img {
 .kakao-icon {
     width: 22px;
     height: 22px;
+}
+
+/* ===== 버튼 hover 툴팁 ===== */
+
+.tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    width: 230px;
+    background-color: #1e293b;
+    color: #fff;
+    text-align: center;
+    padding: 8px 10px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.2s ease-in-out;
+    font-size: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #1e293b transparent transparent transparent;
+}
+
+.tooltip-button:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }
 
 /* 모바일 */
@@ -130,8 +166,13 @@ button img {
     <button onclick="goLink('https://docs.google.com/spreadsheets/d/1hYLdChhjJa22knwb22sqWf3UeLFN4SgGTJUZ6HhBJKQ/edit?gid=1864381143#gid=1864381143')">
         <i class="fa-solid fa-file-excel"></i> 종합 시트
     </button>
-    <button onclick="goLink('https://docs.google.com/forms/d/e/1FAIpQLSduZjQQckag4KOYvkpc14Euyt-qc46TGIGcp6nau7nyAOc9YQ/viewform')">
+
+    <button class="tooltip-button"
+        onclick="goLink('https://docs.google.com/forms/d/e/1FAIpQLSduZjQQckag4KOYvkpc14Euyt-qc46TGIGcp6nau7nyAOc9YQ/viewform')">
         <i class="fa-solid fa-file-excel"></i> 전투력 갱신
+        <span class="tooltip-text">
+            초월이 없을 경우 공란으로 해주세요
+        </span>
     </button>
 </div>
 
@@ -175,7 +216,6 @@ button img {
 <script>
 function toggle(id) {
     const menus = document.querySelectorAll(".sub-buttons");
-
     menus.forEach(menu => {
         if (menu.id !== id) menu.style.display = "none";
     });
